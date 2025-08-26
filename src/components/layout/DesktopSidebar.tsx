@@ -9,7 +9,7 @@ export default function DesktopSidebar() {
   return (
     <div className="hidden md:flex flex-col w-64 bg-white border-2 border-border rounded-2xl m-2 p-4">
       <div className="flex items-center gap-2 mb-8">
-        <img src="caselib_logo_white.svg" alt="caselib logo" />
+        <img src="/assets/logos/caselib_logo_white.svg" alt="caselib logo" />
       </div>
 
       <nav className="space-y-2">
@@ -18,9 +18,9 @@ export default function DesktopSidebar() {
           { id: 'dosarele-mele', label: 'Dosarele mele', icon: 'folder', link: '/dosarele-mele' },
           {
             id: 'termenele-mele',
-            label: 'Termenele mele',
+            label: 'Termene',
             icon: 'calendar',
-            link: '/termenele-mele',
+            link: '/termene',
           },
           { id: 'cautare', label: 'Cautare dosare', icon: 'search', link: '/cautare' },
         ].map((item) => {

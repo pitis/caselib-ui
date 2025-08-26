@@ -45,7 +45,7 @@ export default function RegistrationForm() {
   return (
     <div className="w-full max-w-md md:rounded-3xl p-8 m-auto">
       <div className="flex items-center justify-center mb-8">
-        <img src="caselib_logo_blue.svg" alt="caselib logo" />
+        <img src="/assets/logos/caselib_logo_blue.svg" alt="caselib logo" />
       </div>
 
       <div className="text-center mb-8">

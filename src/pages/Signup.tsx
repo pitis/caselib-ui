@@ -8,7 +8,7 @@ export default function SignupPage() {
       <div className="lg:hidden">
         {/* Mobile Header */}
         <div className="h-52 flex items-center justify-center pt-16 pb-8 bg-blue-900">
-          <img src="caselib_logo_text.svg" alt="caselib logo" />
+          <img src="/assets/logos/caselib_logo_text.svg" alt="caselib logo" />
         </div>
 
         {/* Mobile Form */}
