@@ -1,7 +1,7 @@
 import { Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { Button } from '../ui/button'
 import { Checkbox } from '../ui/checkbox'
 import { Input } from '../ui/input'
@@ -47,8 +47,7 @@ export default function RegistrationForm() {
 
   return (
     <div className="w-full max-w-md md:rounded-3xl p-8 m-auto">
-      {/* Desktop Logo */}
-      <div className="hidden lg:flex items-center justify-center mb-8">
+      <div className="flex items-center justify-center mb-8">
         <img src="caselib_logo_blue.svg" alt="caselib logo" />
       </div>
 
@@ -218,9 +217,9 @@ export default function RegistrationForm() {
         <div className="text-center">
           <span className="text-gray-600 text-sm">
             Ai deja cont?{' '}
-            <a href="#" className="text-blue-600 hover:underline font-medium">
+            <Link to="/login" className="text-blue-600 hover:underline font-medium">
               Autentifica-te
-            </a>
+            </Link>
           </span>
         </div>
       </form>

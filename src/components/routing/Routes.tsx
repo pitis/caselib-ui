@@ -24,7 +24,7 @@ export default function AppRoutes() {
   return (
     <IonReactRouter>
       <IonTabs>
-        <IonRouterOutlet>
+        <IonRouterOutlet animated={false}>
           {/* Public routes (redirect to /dashboard if logged in) */}
           <PublicRoute path="/login" component={LoginPage} exact />
           <PublicRoute path="/signup" component={SignupPage} exact />
