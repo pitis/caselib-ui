@@ -12,11 +12,13 @@ interface FormData {
   prenume: string
   email: string
   parola: string
+  confirmParola: string
   terms: boolean
 }
 
 export default function RegistrationForm() {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false)
 
   const {
     register,
@@ -30,6 +32,7 @@ export default function RegistrationForm() {
       prenume: '',
       email: '',
       parola: '',
+      confirmParola: '',
       terms: false,
     },
   })
@@ -120,7 +123,7 @@ export default function RegistrationForm() {
             <Input
               id="parola"
               type={showPassword ? 'text' : 'password'}
-              placeholder="Creaza o parola"
+              placeholder="Creeaza o parola"
               {...register('parola', {
                 required: 'Parola este obligatorie',
                 minLength: { value: 8, message: 'Parola trebuie să aibă cel puțin 8 caractere' },
@@ -138,6 +141,37 @@ export default function RegistrationForm() {
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
+          {errors.parola && <p className="mt-1 text-sm text-red-600">{errors.parola.message}</p>}
+        </div>
+
+        <div>
+          <Label htmlFor="confirmParola" className="text-sm font-medium text-gray-700">
+            Confirma Parola
+          </Label>
+          <div className="relative mt-1">
+            <Input
+              id="confirmParola"
+              type={showConfirmPassword ? 'text' : 'password'}
+              placeholder="Scrie parola din nou"
+              {...register('confirmParola', {
+                required: 'Parola este obligatorie',
+                minLength: { value: 8, message: 'Parola trebuie să aibă cel puțin 8 caractere' },
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+                  message:
+                    'Parola trebuie să conțină cel puțin o literă mică, o literă mare și o cifră',
+                },
+              })}
+              className={`h-12 border-gray-200 rounded-xl pr-12 ${errors.parola ? 'border-red-500' : ''}`}
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
           </div>
           {errors.parola && <p className="mt-1 text-sm text-red-600">{errors.parola.message}</p>}
